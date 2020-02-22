@@ -12,13 +12,20 @@ protocol ExampleStoryboardPresenter {
     var controller: BaseViewController? { get set }
     func getCountries() -> [String]
     func selectCountry(country: String) -> Void
+    func loadInfo() -> Void
 }
 
 class ExamplePresenter: ExampleStoryboardPresenter {
     var controller: BaseViewController?
     
     func getCountries() -> [String] {
-        return ["<3\nBrazil \n:D", "UK", "Chile", "Australia", "Japan", "China"]
+        return ["🇧🇷Brazil🇧🇷 \n 👌\n", "UK", "Chile", "Australia", "Japan", "China"]
+    }
+    
+    func loadInfo() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.controller?.reloadView()
+        }
     }
     
     func selectCountry(country: String) {
@@ -33,6 +40,7 @@ class ExampleStoryboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         presenter.controller = self
+        presenter.loadInfo()
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = "Example Generic Table"
     }
@@ -65,6 +73,11 @@ class ExampleStoryboardViewController: BaseViewController {
                 }
             }
         }
+    }
+    
+    override func setupPlaceholder() {
+        addPlaceholder(HeaderCell.self)
+        addPlaceholder(BodyTextCell.self)
     }
 }
 

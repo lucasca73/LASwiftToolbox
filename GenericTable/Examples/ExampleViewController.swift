@@ -25,14 +25,13 @@ class ExampleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
+        reloadView(animated: false)
     }
     
     override func setupView() {
-        
         add(cell: BodyTextCell.self) { cell in
             cell.setupView(text: self.headerTitle)
         }
-        
     }
     
 }

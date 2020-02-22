@@ -30,6 +30,12 @@ class BodyTextCell: BaseCell {
         bodyLabel.text = ""
     }
     
+    override func setupPlaceholder() {
+        bodyLabel.text = "\t\t\t"
+        self.contentView.layoutSubviews()
+        addLoading(on: bodyLabel)
+    }
+    
     func setupView(text: String) {
         bodyLabel.text = text
     }

@@ -16,6 +16,7 @@ class HeaderCell: BaseCell {
     override func setupPlaceholder() {
         firstLabel.text = "\t\t"
         secondLabel.text = "\t\t\t\t"
+        self.contentView.layoutSubviews()
         addLoading(on: firstLabel)
         addLoading(on: secondLabel)
     }

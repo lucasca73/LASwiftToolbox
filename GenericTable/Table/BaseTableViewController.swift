@@ -32,17 +32,50 @@ class BaseViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        reloadView()
+        reloadPlaceholder(animated: false)
     }
     
+    // Runs when reloadView is called
     func setupView() {
         fatalError("Method setupView must be overridden")
     }
     
-    func reloadView() {
+    // Empty placeholder
+    func setupPlaceholder() {}
+    
+    // Remove all current builders
+    func clearBuilders() {
         sections.removeAll()
+    }
+    
+    // Update view with current builders
+    func updateView() {
+        tableView.reloadData()
+    }
+    
+    func reloadView(animated: Bool = true) {
+        clearBuilders()
         setupView()
         tableView.reloadData()
+        
+        if animated {
+            UIView.animate(withDuration: 0.23) {
+                self.tableView.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func reloadPlaceholder(animated: Bool = true) {
+        clearBuilders()
+        setupPlaceholder()
+        tableView.reloadData()
+        
+        if animated {
+            UIView.animate(withDuration: 0.23) {
+                self.tableView.layoutIfNeeded()
+            }
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -328,8 +361,8 @@ extension UIView {
         gradientLayer.isHidden = false
         
         // Comment if vertical
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5);
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5);
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0);
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0);
         
         self.layer.addSublayer(gradientLayer)
         self.clipsToBounds = true
@@ -337,7 +370,7 @@ extension UIView {
         let anim = CABasicAnimation(keyPath: "transform.translation.x")
         anim.duration = 2
         anim.fromValue = -frame.width
-        anim.toValue = frame.width*1.5
+        anim.toValue = frame.width*2
         anim.repeatCount = Float.infinity
 
         gradientLayer.add(anim, forKey: key)
