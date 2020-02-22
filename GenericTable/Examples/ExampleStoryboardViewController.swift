@@ -23,6 +23,7 @@ class ExamplePresenter: ExampleStoryboardPresenter {
     }
     
     func loadInfo() {
+        self.controller?.reloadPlaceholder()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.controller?.reloadView()
         }
@@ -40,9 +41,13 @@ class ExampleStoryboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         presenter.controller = self
-        presenter.loadInfo()
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = "Example Generic Table"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.loadInfo()
     }
     
     override func setupView() {

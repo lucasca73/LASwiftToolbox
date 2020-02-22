@@ -14,8 +14,8 @@ class HeaderCell: BaseCell {
     @IBOutlet weak var secondLabel: UILabel!
     
     override func setupPlaceholder() {
-        firstLabel.text = "\t\t"
-        secondLabel.text = "\t\t\t\t"
+        firstLabel.text = "MUSSUM IPSUM"
+        secondLabel.text = "Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget"
         self.contentView.layoutSubviews()
         addLoading(on: firstLabel)
         addLoading(on: secondLabel)

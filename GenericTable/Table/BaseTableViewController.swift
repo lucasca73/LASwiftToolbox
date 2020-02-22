@@ -375,11 +375,21 @@ extension UIView {
 
         gradientLayer.add(anim, forKey: key)
         
+        var textColor: UIColor?
+        
+        if let label = self as? UILabel {
+            textColor = label.textColor
+            label.textColor = .clear
+        }
+        
         let tracking = TrackingObject()
         tracking.end = {
-            self.backgroundColor = originalBackgroundColor
             gradientLayer.removeAnimation(forKey: key)
             gradientLayer.removeFromSuperlayer()
+            self.backgroundColor = originalBackgroundColor
+            if let label = self as? UILabel, textColor != nil {
+                label.textColor = textColor
+            }
         }
         
         return tracking
