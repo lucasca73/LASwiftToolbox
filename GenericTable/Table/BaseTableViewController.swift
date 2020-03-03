@@ -179,6 +179,29 @@ class BaseViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func addTable<Cell: BaseCell, Data: DataModel<Cell>>(data: [Data]) {
+        
+        tableView.register(cellType: Cell.self)
+        let tb = TableBuilder(type: Cell.self, builder: { index, cell in
+            let builder = data[index.row]
+            builder.setup(cell: cell)
+        })
+        tb.type = Cell.self
+        tb.rows = data.count
+        
+        if let sec = sections.last {
+            if sec.hasBuilders() {
+                addSection()
+            }
+        } else {
+            addSection()
+        }
+        
+        if let lastSec = sections.last {
+            lastSec.builders.append(tb)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return sections[section].viewBuilder?(section)
     }
@@ -189,6 +212,10 @@ class BaseViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
@@ -336,6 +363,8 @@ class BaseCell: UITableViewCell, ClicableCell {
         addLoading(on: self)
     }
 }
+
+// Extension
 
 class TrackingObject {
     var end: (() -> Void)?

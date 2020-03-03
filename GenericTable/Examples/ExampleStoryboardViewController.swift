@@ -13,6 +13,7 @@ protocol ExampleStoryboardPresenter {
     func getCountries() -> [String]
     func selectCountry(country: String) -> Void
     func loadInfo() -> Void
+    func presentModelTable() -> Void
 }
 
 class ExamplePresenter: ExampleStoryboardPresenter {
@@ -31,6 +32,11 @@ class ExamplePresenter: ExampleStoryboardPresenter {
     
     func selectCountry(country: String) {
         let detailController = ExampleViewController(title: country)
+        controller?.navigationController?.pushViewController(detailController, animated: true)
+    }
+    
+    func presentModelTable() {
+        let detailController = ExampleModelTable()
         controller?.navigationController?.pushViewController(detailController, animated: true)
     }
 }
@@ -57,7 +63,10 @@ class ExampleStoryboardViewController: BaseViewController {
         }
         
         add(cell: BodyTextCell.self) { cell in
-            cell.setupView(text: "One text body")
+            cell.setupView(text: "Model Table Example")
+            cell.didClick = { index in
+                self.presenter.presentModelTable()
+            }
         }
         
         let countries = presenter.getCountries()

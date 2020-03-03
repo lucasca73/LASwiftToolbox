@@ -31,6 +31,9 @@ class ExampleViewController: BaseViewController {
     override func setupView() {
         add(cell: BodyTextCell.self) { cell in
             cell.setupView(text: self.headerTitle)
+            cell.didClick = { [weak self] index in
+                self?.navigationController?.pushViewController(ExampleModelTable(), animated: true)
+            }
         }
     }
     

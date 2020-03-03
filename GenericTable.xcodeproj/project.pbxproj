@@ -18,6 +18,8 @@
 		E9C836B22401AA4F00DBCD65 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C836B02401AA4F00DBCD65 /* HeaderCell.xib */; };
 		E9C836B62401ADDF00DBCD65 /* BodyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836B52401ADDF00DBCD65 /* BodyTextCell.swift */; };
 		E9C836B82401B86800DBCD65 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836B72401B86800DBCD65 /* ExampleViewController.swift */; };
+		E9C836BC24056C5700DBCD65 /* ModelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836BB24056C5700DBCD65 /* ModelTable.swift */; };
+		E9C836BE2405711400DBCD65 /* ExampleModelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836BD2405711400DBCD65 /* ExampleModelTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E9C836B02401AA4F00DBCD65 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		E9C836B52401ADDF00DBCD65 /* BodyTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextCell.swift; sourceTree = "<group>"; };
 		E9C836B72401B86800DBCD65 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		E9C836BB24056C5700DBCD65 /* ModelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTable.swift; sourceTree = "<group>"; };
+		E9C836BD2405711400DBCD65 /* ExampleModelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModelTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C836AB2401A54400DBCD65 /* BaseTableViewController.swift */,
+				E9C836BB24056C5700DBCD65 /* ModelTable.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			children = (
 				E9C836982401A4D500DBCD65 /* ExampleStoryboardViewController.swift */,
 				E9C836B72401B86800DBCD65 /* ExampleViewController.swift */,
+				E9C836BD2405711400DBCD65 /* ExampleModelTable.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -197,10 +203,12 @@
 				E9C836992401A4D500DBCD65 /* ExampleStoryboardViewController.swift in Sources */,
 				E9C836B12401AA4F00DBCD65 /* HeaderCell.swift in Sources */,
 				E9C836952401A4D500DBCD65 /* AppDelegate.swift in Sources */,
+				E9C836BC24056C5700DBCD65 /* ModelTable.swift in Sources */,
 				E9C836AE2401A76E00DBCD65 /* BaseTableViewController.swift in Sources */,
 				E9C836B82401B86800DBCD65 /* ExampleViewController.swift in Sources */,
 				E9C836B62401ADDF00DBCD65 /* BodyTextCell.swift in Sources */,
 				E9C836972401A4D500DBCD65 /* SceneDelegate.swift in Sources */,
+				E9C836BE2405711400DBCD65 /* ExampleModelTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
