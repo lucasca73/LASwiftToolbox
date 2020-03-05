@@ -29,12 +29,34 @@ class ExampleViewController: BaseViewController {
     }
     
     override func setupView() {
-        add(cell: BodyTextCell.self) { cell in
-            cell.setupView(text: self.headerTitle)
-            cell.didClick = { [weak self] index in
-                self?.navigationController?.pushViewController(ExampleModelTable(), animated: true)
-            }
-        }
+        
+        // Passing didClick as parameter
+        let textBuilder = TextBuilder(text: self.headerTitle, didClick: didClickInCell)
+        
+        // Using different builders
+        add(cell: BodyTextCell.self, builder: textBuilder.buildGreen)
+        
+        add(cell: BodyTextCell.self, builder: textBuilder.build)
     }
     
+    func didClickInCell(_ indexPath: IndexPath) {
+        navigationController?.pushViewController(ExampleModelTable(), animated: true)
+    }
+    
+}
+
+struct TextBuilder {
+    var text: String
+    var didClick: ((IndexPath) -> Void)?
+    
+    func build(cell: BodyTextCell) {
+        cell.setupView(text: text)
+        cell.didClick = didClick
+    }
+    
+    func buildGreen(cell: BodyTextCell) {
+        cell.setupView(text: text)
+        cell.didClick = didClick
+        cell.backgroundColor = UIColor.green
+    }
 }
