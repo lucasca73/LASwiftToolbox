@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9C060B324A6A82E00F0CBED /* DoubleTextInputFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060A524A6A82E00F0CBED /* DoubleTextInputFormCell.swift */; };
+		E9C060B424A6A82E00F0CBED /* FormTextViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060A624A6A82E00F0CBED /* FormTextViewHandler.swift */; };
+		E9C060B524A6A82E00F0CBED /* DoubleTextInputFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C060A724A6A82E00F0CBED /* DoubleTextInputFormCell.xib */; };
+		E9C060B624A6A82E00F0CBED /* BasicTextFormViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060A924A6A82E00F0CBED /* BasicTextFormViewCell.swift */; };
+		E9C060B724A6A82E00F0CBED /* BasicTextFormViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C060AA24A6A82E00F0CBED /* BasicTextFormViewCell.xib */; };
+		E9C060B824A6A82E00F0CBED /* FormMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060AB24A6A82E00F0CBED /* FormMask.swift */; };
+		E9C060BA24A6A82E00F0CBED /* FormRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060AD24A6A82E00F0CBED /* FormRule.swift */; };
+		E9C060BB24A6A82E00F0CBED /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060AE24A6A82E00F0CBED /* FormValidator.swift */; };
+		E9C060BC24A6A82E00F0CBED /* FormManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060AF24A6A82E00F0CBED /* FormManager.swift */; };
+		E9C060BD24A6A82E00F0CBED /* FormFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060B024A6A82E00F0CBED /* FormFieldError.swift */; };
+		E9C060BE24A6A82E00F0CBED /* FormFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060B124A6A82E00F0CBED /* FormFieldCell.swift */; };
+		E9C060BF24A6A82E00F0CBED /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060B224A6A82E00F0CBED /* FormField.swift */; };
+		E9C060C124A6A96E00F0CBED /* FormExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C060C024A6A96E00F0CBED /* FormExample.swift */; };
 		E9C836952401A4D500DBCD65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836942401A4D500DBCD65 /* AppDelegate.swift */; };
 		E9C836972401A4D500DBCD65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836962401A4D500DBCD65 /* SceneDelegate.swift */; };
 		E9C836992401A4D500DBCD65 /* ExampleStoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C836982401A4D500DBCD65 /* ExampleStoryboardViewController.swift */; };
@@ -23,6 +36,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9C060A524A6A82E00F0CBED /* DoubleTextInputFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTextInputFormCell.swift; sourceTree = "<group>"; };
+		E9C060A624A6A82E00F0CBED /* FormTextViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextViewHandler.swift; sourceTree = "<group>"; };
+		E9C060A724A6A82E00F0CBED /* DoubleTextInputFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleTextInputFormCell.xib; sourceTree = "<group>"; };
+		E9C060A924A6A82E00F0CBED /* BasicTextFormViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTextFormViewCell.swift; sourceTree = "<group>"; };
+		E9C060AA24A6A82E00F0CBED /* BasicTextFormViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicTextFormViewCell.xib; sourceTree = "<group>"; };
+		E9C060AB24A6A82E00F0CBED /* FormMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormMask.swift; sourceTree = "<group>"; };
+		E9C060AD24A6A82E00F0CBED /* FormRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRule.swift; sourceTree = "<group>"; };
+		E9C060AE24A6A82E00F0CBED /* FormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		E9C060AF24A6A82E00F0CBED /* FormManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormManager.swift; sourceTree = "<group>"; };
+		E9C060B024A6A82E00F0CBED /* FormFieldError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFieldError.swift; sourceTree = "<group>"; };
+		E9C060B124A6A82E00F0CBED /* FormFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFieldCell.swift; sourceTree = "<group>"; };
+		E9C060B224A6A82E00F0CBED /* FormField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		E9C060C024A6A96E00F0CBED /* FormExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormExample.swift; sourceTree = "<group>"; };
 		E9C836912401A4D500DBCD65 /* GenericTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenericTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C836942401A4D500DBCD65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9C836962401A4D500DBCD65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +77,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9C060A224A6A82E00F0CBED /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				E9C060A324A6A82E00F0CBED /* FormCell */,
+				E9C060AB24A6A82E00F0CBED /* FormMask.swift */,
+				E9C060AD24A6A82E00F0CBED /* FormRule.swift */,
+				E9C060AE24A6A82E00F0CBED /* FormValidator.swift */,
+				E9C060AF24A6A82E00F0CBED /* FormManager.swift */,
+				E9C060B024A6A82E00F0CBED /* FormFieldError.swift */,
+				E9C060B124A6A82E00F0CBED /* FormFieldCell.swift */,
+				E9C060B224A6A82E00F0CBED /* FormField.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		E9C060A324A6A82E00F0CBED /* FormCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9C060A424A6A82E00F0CBED /* DoubleTextInput */,
+				E9C060A824A6A82E00F0CBED /* BasicTextInput */,
+			);
+			path = FormCell;
+			sourceTree = "<group>";
+		};
+		E9C060A424A6A82E00F0CBED /* DoubleTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				E9C060A524A6A82E00F0CBED /* DoubleTextInputFormCell.swift */,
+				E9C060A624A6A82E00F0CBED /* FormTextViewHandler.swift */,
+				E9C060A724A6A82E00F0CBED /* DoubleTextInputFormCell.xib */,
+			);
+			path = DoubleTextInput;
+			sourceTree = "<group>";
+		};
+		E9C060A824A6A82E00F0CBED /* BasicTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				E9C060A924A6A82E00F0CBED /* BasicTextFormViewCell.swift */,
+				E9C060AA24A6A82E00F0CBED /* BasicTextFormViewCell.xib */,
+			);
+			path = BasicTextInput;
+			sourceTree = "<group>";
+		};
 		E9C836882401A4D500DBCD65 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +139,8 @@
 		E9C836932401A4D500DBCD65 /* GenericTable */ = {
 			isa = PBXGroup;
 			children = (
+				E9C060C024A6A96E00F0CBED /* FormExample.swift */,
+				E9C060A224A6A82E00F0CBED /* Form */,
 				E9C836A92401A51300DBCD65 /* Cells */,
 				E9C836A82401A50D00DBCD65 /* Table */,
 				E9C836AD2401A75700DBCD65 /* Examples */,
@@ -186,9 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C060B724A6A82E00F0CBED /* BasicTextFormViewCell.xib in Resources */,
 				E9C836B22401AA4F00DBCD65 /* HeaderCell.xib in Resources */,
 				E9C836A12401A4DA00DBCD65 /* LaunchScreen.storyboard in Resources */,
 				E9C8369E2401A4DA00DBCD65 /* Assets.xcassets in Resources */,
+				E9C060B524A6A82E00F0CBED /* DoubleTextInputFormCell.xib in Resources */,
 				E9C8369C2401A4D500DBCD65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,12 +273,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C060C124A6A96E00F0CBED /* FormExample.swift in Sources */,
 				E9C836992401A4D500DBCD65 /* ExampleStoryboardViewController.swift in Sources */,
+				E9C060BC24A6A82E00F0CBED /* FormManager.swift in Sources */,
+				E9C060B824A6A82E00F0CBED /* FormMask.swift in Sources */,
+				E9C060BA24A6A82E00F0CBED /* FormRule.swift in Sources */,
 				E9C836B12401AA4F00DBCD65 /* HeaderCell.swift in Sources */,
+				E9C060BD24A6A82E00F0CBED /* FormFieldError.swift in Sources */,
+				E9C060B324A6A82E00F0CBED /* DoubleTextInputFormCell.swift in Sources */,
+				E9C060B424A6A82E00F0CBED /* FormTextViewHandler.swift in Sources */,
 				E9C836952401A4D500DBCD65 /* AppDelegate.swift in Sources */,
+				E9C060BF24A6A82E00F0CBED /* FormField.swift in Sources */,
+				E9C060BB24A6A82E00F0CBED /* FormValidator.swift in Sources */,
 				E9C836BC24056C5700DBCD65 /* ModelTable.swift in Sources */,
 				E9C836AE2401A76E00DBCD65 /* BaseTableViewController.swift in Sources */,
+				E9C060BE24A6A82E00F0CBED /* FormFieldCell.swift in Sources */,
 				E9C836B82401B86800DBCD65 /* ExampleViewController.swift in Sources */,
+				E9C060B624A6A82E00F0CBED /* BasicTextFormViewCell.swift in Sources */,
 				E9C836B62401ADDF00DBCD65 /* BodyTextCell.swift in Sources */,
 				E9C836972401A4D500DBCD65 /* SceneDelegate.swift in Sources */,
 				E9C836BE2405711400DBCD65 /* ExampleModelTable.swift in Sources */,
