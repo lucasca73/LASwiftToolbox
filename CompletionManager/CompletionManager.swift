@@ -1,3 +1,6 @@
+
+import Foundation
+
 // GLOBAL QUEUE THREAD
 fileprivate let THREAD_COMPLETION_HANDLER = DispatchQueue(label: "com.completion.manager", attributes: .concurrent)
 
