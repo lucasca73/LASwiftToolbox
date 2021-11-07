@@ -1,0 +1,6 @@
+framework module Pods_SwiftToolbox_Example {
+  umbrella header "Pods-SwiftToolbox_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

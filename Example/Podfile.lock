@@ -1,0 +1,35 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Nimble (9.2.1)
+  - Quick (4.0.0)
+  - SwiftToolbox (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Nimble (~> 9.2)
+  - Quick
+  - SwiftToolbox (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  SwiftToolbox:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  SwiftToolbox: 6ed9e6135e73d2e81f1314b559fda84bd2c79307
+
+PODFILE CHECKSUM: d29012fab47b2a70525e5f86349779a628333b23
+
+COCOAPODS: 1.11.2

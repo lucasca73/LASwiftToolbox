@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'SwiftToolbox_Example' do
+  pod 'SwiftToolbox', :path => '../'
+
+  target 'SwiftToolbox_Tests' do
+    inherit! :search_paths
+
+    pod 'Quick'
+    pod 'Nimble', '~> 9.2'
+    pod 'FBSnapshotTestCase'
+  end
+end

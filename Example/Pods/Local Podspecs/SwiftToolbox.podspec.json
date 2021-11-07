@@ -1,0 +1,22 @@
+{
+  "name": "SwiftToolbox",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftToolbox.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Lucas Costa Araujo/SwiftToolbox",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Lucas Costa Araujo": "lucas@guarana.io"
+  },
+  "source": {
+    "git": "https://github.com/Lucas Costa Araujo/SwiftToolbox.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "SwiftToolbox/Classes/**/*"
+}
