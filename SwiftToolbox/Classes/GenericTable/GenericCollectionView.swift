@@ -32,7 +32,7 @@ class STGenericCollectionView<Cell: UICollectionViewCell>: UIViewController, UIC
         flowLayout.minimumInteritemSpacing = spacing
         flowLayout.minimumLineSpacing = spacing
         flowLayout.scrollDirection = .horizontal
-        flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         
         collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         collectionView?.translatesAutoresizingMaskIntoConstraints = false

@@ -46,7 +46,7 @@ open class STGenericTableViewController: UIViewController {
     
     override open func viewDidLoad() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         self.view.backgroundColor = .white
         
@@ -173,7 +173,7 @@ open class STGenericTableViewController: UIViewController {
     }
     
     @discardableResult open func add<T: UITableViewCell>(cell: T.Type,
-                                                           height: CGFloat = UITableViewAutomaticDimension,
+                                                           height: CGFloat = UITableView.automaticDimension,
                                                            reloadListener: String? = nil,
                                                            builder: ((T) -> Void)? = nil ) -> STCellBuilder<T> {
         
@@ -198,7 +198,7 @@ open class STGenericTableViewController: UIViewController {
     
     @discardableResult open func addTable<T: UITableViewCell>(cell: T.Type,
                                                                 count: Int,
-                                                                rowHeight: CGFloat = UITableViewAutomaticDimension,
+                                                                rowHeight: CGFloat = UITableView.automaticDimension,
                                                                 reloadListener: String? = nil,
                                                                 builder: ((IndexPath, T) -> Void)? = nil ) -> STTableBuilder<T> {
         

@@ -49,7 +49,7 @@ public class CoordinatorAbstract: NSObject {
     func removeCoordinatorViewsFromNavigation() {
         guard let rootVC = root else { return }
         var viewControllers = navigation.viewControllers
-        guard let indexRoot = viewControllers.index(of: rootVC) else { return }
+        guard let indexRoot = viewControllers.firstIndex(of: rootVC) else { return }
         let removeCount = viewControllers.count - indexRoot - 1
         if removeCount > 0 {
             viewControllers.removeLast(removeCount)
@@ -67,10 +67,10 @@ public class CoordinatorAbstract: NSObject {
         
         if let root = root {
             
-            let rootIndex = fluxo.index(of: root) ?? 1
+            let rootIndex = fluxo.firstIndex(of: root) ?? 1
             
             for vc in fluxo {
-                if fluxo.index(of: vc) ?? 0 > rootIndex {
+                if fluxo.firstIndex(of: vc) ?? 0 > rootIndex {
                     controllers.append(vc)
                 }
             }
@@ -116,7 +116,7 @@ public class CoordinatorAbstract: NSObject {
         
         guard let rootVC = root else { return }
         var viewControllers = navigation.viewControllers
-        guard let indexRoot = viewControllers.index(of: rootVC) else { return }
+        guard let indexRoot = viewControllers.firstIndex(of: rootVC) else { return }
         let removeCount = viewControllers.count - indexRoot - 1
         if removeCount > 0 {
             viewControllers.removeLast(removeCount)
@@ -137,7 +137,7 @@ public class CoordinatorAbstract: NSObject {
 }
 
 extension CoordinatorAbstract: UINavigationControllerDelegate {
-    private func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
         if root === viewController {
             parent?.didEnd(from: self)

@@ -212,7 +212,7 @@
 		045C2B2F63D27FE76AC6CC2083E55C8D /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		0573C9D4CECC631EEB6537F5E574232D /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		0609D7297FBC693828F1BD25A5367045 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftToolbox; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08216D1413536B9EE5F768B25999C8D2 /* Pods-SwiftToolbox_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftToolbox_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0A1416E1144D6BF9C8525DB19DD90E78 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
 		0A9F141B381E24D781A13A8BE44C6293 /* SwiftToolbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftToolbox-dummy.m"; sourceTree = "<group>"; };
@@ -511,7 +511,7 @@
 				FA06C1857D31CB58F4C082A92A0D5A4E /* Pods-SwiftToolbox_Example */,
 				B61B6A6C455DA53E2E2FFE9D3442BEFE /* Pods-SwiftToolbox_Tests */,
 				0D631E9908483F9525A6B3F36F16CC61 /* Quick */,
-				06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox */,
+				06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -962,7 +962,7 @@
 			);
 			name = SwiftToolbox;
 			productName = SwiftToolbox;
-			productReference = 06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox */;
+			productReference = 06FD06B53B6D1C850490D3F1C5404326 /* SwiftToolbox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */ = {
@@ -1050,6 +1050,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					6F6EC65CEE9F2B39709E623BB9ED0D38 = {
+						LastSwiftMigration = 1310;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1440,7 +1445,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1567,7 +1572,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

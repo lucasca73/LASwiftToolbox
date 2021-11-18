@@ -8,7 +8,7 @@ public class STCellBuilder<T>: STBuilderProtocol where T: UITableViewCell {
     public var buildCell: BuildCell?
     public var type: T.Type
     public var cellId: String?
-    public var height: CGFloat = UITableViewAutomaticDimension
+    public var height: CGFloat = UITableView.automaticDimension
     public var leadingEdit: SetupEdit?
     public var trailingEdit: SetupEdit?
     

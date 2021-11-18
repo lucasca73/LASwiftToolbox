@@ -20,14 +20,14 @@ public extension UICollectionView {
     }
     
     func register<T: UICollectionReusableView>(reusableViewType: T.Type,
-                                               ofKind kind: String = UICollectionElementKindSectionHeader,
+                                               ofKind kind: String = UICollectionView.elementKindSectionHeader,
                                                bundle: Bundle? = nil) {
         let className = reusableViewType.className
         register(reusableViewType, forCellWithReuseIdentifier: className)
     }
     
     func register<T: UICollectionReusableView>(reusableViewTypes: [T.Type],
-                                               ofKind kind: String = UICollectionElementKindSectionHeader,
+                                               ofKind kind: String = UICollectionView.elementKindSectionHeader,
                                                bundle: Bundle? = nil) {
         reusableViewTypes.forEach { register(reusableViewType: $0, ofKind: kind, bundle: bundle) }
     }
@@ -39,7 +39,7 @@ public extension UICollectionView {
     
     func dequeueReusableView<T: UICollectionReusableView>(with type: T.Type,
                                                           for indexPath: IndexPath,
-                                                          ofKind kind: String = UICollectionElementKindSectionHeader) -> T {
+                                                          ofKind kind: String = UICollectionView.elementKindSectionHeader) -> T {
         return dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: type.className, for: indexPath) as! T
     }
 }

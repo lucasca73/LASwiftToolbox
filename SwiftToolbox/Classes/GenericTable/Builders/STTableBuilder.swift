@@ -10,7 +10,7 @@ public class STTableBuilder<T>: STBuilderProtocol where T: UITableViewCell {
     public var type: T.Type
     public var counter: (() -> Int)?
     public var cellId: String?
-    public var rowHeight: CGFloat = UITableViewAutomaticDimension
+    public var rowHeight: CGFloat = UITableView.automaticDimension
     public var leadingEdit: SetupEdit?
     public var trailingEdit: SetupEdit?
     

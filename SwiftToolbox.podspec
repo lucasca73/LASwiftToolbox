@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   SwiftToolbox
 
   GenericTable -> Helps to build quick table without effort.
-  
+
   CompletionManager -> Helps you handle multi dependent async tasks, alternative to Group.
 
   MIT license, use as you wish.
@@ -36,6 +36,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'SwiftToolbox/Classes/**/*'
   
