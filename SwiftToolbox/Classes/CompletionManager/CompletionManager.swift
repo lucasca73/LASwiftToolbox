@@ -1,15 +1,12 @@
-
 import Foundation
 
-// GLOBAL QUEUE THREAD
-fileprivate let THREAD_COMPLETION_HANDLER = DispatchQueue(label: "com.lst.completion.manager", attributes: .concurrent)
-
-class CompletionObject: NSObject {
+open class CompletionObject: NSObject {
     
-    var name: String = ""
-    var closureID: Int?
-    var manager: CompletionManager?
-    var finished = false
+    open var name: String = ""
+    open var closureID: Int?
+    open var manager: CompletionManager?
+    open var finished = false
+    open var endCompletion: (() -> Void)?
     
     init(name: String) {
         self.name = name
@@ -21,54 +18,62 @@ class CompletionObject: NSObject {
         manager.addCompletion(self)
     }
     
-    func end() {
+    open func end() {
         if let manag = manager, finished == false {
             manag.updatePartialProgress(closure: self)
         }
         
+        endCompletion?()
+        endCompletion = nil
         finished = true
     }
     
-    func setManager(_ manager: CompletionManager) {
+    open func setManager(_ manager: CompletionManager) {
         manager.addCompletion(self)
     }
     
-    override var description: String {
+    open override var description: String {
         return "\(closureID ?? -1) \(name)"
     }
 }
 
-class CompletionManager {
+open class CompletionManager {
+    
+    private static let threadCompletionHandler = DispatchQueue(label: "com.completion.manager", attributes: .concurrent)
 
-    var completions = [CompletionObject]()
+    open var completions = [CompletionObject]()
     private var _endCompletion: (() -> Void)?
     
-    private var counter: Int = 0
-    private var completed: Int = 0
-    private var total: Int = 0
+    private var counter = 0
+    private var completed = 0
+    private var total = 0
     private var finished = false
     
-    func newCompletion() -> CompletionObject {
+    public init() {}
+    
+    open func newCompletion() -> CompletionObject {
         let obj = CompletionObject(name: "")
         addCompletion(obj)
         return obj
     }
     
-    func endCompletion(_ completion: @escaping (() -> Void)) {
-        if completions.isEmpty || finished {
-            completion()
-        } else {
-            _endCompletion = completion
+    open func endCompletion(_ completion: @escaping (() -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            if self.completions.isEmpty || self.finished {
+                completion()
+            } else {
+                self._endCompletion = completion
+            }
         }
     }
     
-    func addCompletion(_ closure: CompletionObject) {
+    open func addCompletion(_ closure: CompletionObject) {
         
         if closure.finished {
             return
         }
         
-        THREAD_COMPLETION_HANDLER.async(flags: .barrier) {
+        CompletionManager.threadCompletionHandler.async(flags: .barrier) {
             self.counter += 1
             
             closure.manager = self
@@ -80,7 +85,7 @@ class CompletionManager {
         }
     }
     
-    func clearFinishedCompletions() {
+    open func clearFinishedCompletions() {
         completions = completions.filter({ (obj) -> Bool in
             return obj.finished == false
         })
@@ -88,7 +93,7 @@ class CompletionManager {
     
     func updatePartialProgress(closure: CompletionObject) {
         
-        THREAD_COMPLETION_HANDLER.async(flags: .barrier) {
+        CompletionManager.threadCompletionHandler.async(flags: .barrier) {
             var removeIndex = 0
             self.completed += 1
             
@@ -97,7 +102,7 @@ class CompletionManager {
                 return
             }
             
-            for index in 0...(self.completions.count) - 1 {
+            for index in 0..<self.completions.count {
                 let obj = self.completions[index]
                 if obj.closureID == closure.closureID {
                     removeIndex = index
@@ -116,9 +121,6 @@ class CompletionManager {
     private func dispatchCompletion() {
         if !self.finished {
             
-            // Em passagens muito rapidas, estava gerando dupla chamada do completion
-            // Trazendo para uma variavel local que sera eliminado ao fim do main.async
-            // e desalocando o completion na thread atual... parece corrigir o problema
             let localRef = _endCompletion
             
             self._endCompletion = nil
