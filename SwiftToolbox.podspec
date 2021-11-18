@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SwiftToolbox'
+  s.name             = 'LASwiftToolbox'
   s.version          = '0.0.1'
-  s.summary          = 'SwiftToolbox is a compile of helpers, classes and extensions, to improve code reuse and enhance productivity.'
+  s.summary          = 'LASwiftToolbox is a compile of helpers, classes and extensions, to improve code reuse and enhance productivity.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 
-  SwiftToolbox
+  LASwiftToolbox
 
   GenericTable -> Helps to build quick table without effort.
 
