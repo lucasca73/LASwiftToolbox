@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftToolbox'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'SwiftToolbox is a compile of helpers, classes and extensions, to improve code reuse and enhance productivity.'
 
 # This description is used to generate tags and improve search results.
