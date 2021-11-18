@@ -1,9 +1,9 @@
 # SwiftToolbox
 
-[![CI Status](https://img.shields.io/travis/Lucas Costa Araujo/SwiftToolbox.svg?style=flat)](https://travis-ci.org/Lucas Costa Araujo/SwiftToolbox)
+<!-- [![CI Status](https://img.shields.io/travis/Lucas Costa Araujo/SwiftToolbox.svg?style=flat)](https://travis-ci.org/Lucas Costa Araujo/SwiftToolbox)
 [![Version](https://img.shields.io/cocoapods/v/SwiftToolbox.svg?style=flat)](https://cocoapods.org/pods/SwiftToolbox)
 [![License](https://img.shields.io/cocoapods/l/SwiftToolbox.svg?style=flat)](https://cocoapods.org/pods/SwiftToolbox)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftToolbox.svg?style=flat)](https://cocoapods.org/pods/SwiftToolbox)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftToolbox.svg?style=flat)](https://cocoapods.org/pods/SwiftToolbox) -->
 
 ## Example
 
