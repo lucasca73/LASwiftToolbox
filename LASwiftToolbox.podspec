@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'SwiftToolbox/Classes/**/*'
+  s.source_files = 'LASwiftToolbox/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SwiftToolbox' => ['SwiftToolbox/Assets/*.png']
