@@ -1,39 +1,44 @@
 import UIKit
 
-public class CellBuilder<T>: BuilderProtocol where T: UITableViewCell {
+public class STTableBuilder<T>: STBuilderProtocol where T: UITableViewCell {
     
-    public typealias BuildCell = ((T) -> Void)
-    public typealias SetupEdit = (() -> UISwipeActionsConfiguration?)
+    public typealias BuildTable = ((IndexPath, T) -> Void)
+    public typealias SetupEdit = ((IndexPath) -> UISwipeActionsConfiguration?)
     
-    public var buildCell: BuildCell?
+    public var builder: BuildTable?
+    public var rows: Int = 1
     public var type: T.Type
+    public var counter: (() -> Int)?
     public var cellId: String?
-    public var height: CGFloat = UITableViewAutomaticDimension
+    public var rowHeight: CGFloat = UITableViewAutomaticDimension
     public var leadingEdit: SetupEdit?
     public var trailingEdit: SetupEdit?
     
-    public init(type: T.Type, builder: BuildCell?, cellId: String?) {
-        self.buildCell = builder
+    public init(type: T.Type, builder: BuildTable?, cellId: String?) {
+        self.builder = builder
         self.type = type
         self.cellId = cellId
     }
     
-    // swiftlint:disable force_cast
     public func callBuilder(path: IndexPath, cell: UITableViewCell) {
-        buildCell?(cell as! T)
+        // swiftlint:disable:next force_cast
+        builder?(path, cell as! T)
     }
     
     public func getType<U>() -> U.Type where U: UITableViewCell {
+        // swiftlint:disable:next force_cast
         return type as! U.Type
     }
-    // swiftlint:enable force_cast
     
     public func getCount() -> Int {
-        return 1
+        if let counter = counter {
+            return counter()
+        }
+        return rows
     }
     
     public func isTable() -> Bool {
-        return false
+        return true
     }
     
     public func shouldReload(id: String) -> Bool {
@@ -41,14 +46,15 @@ public class CellBuilder<T>: BuilderProtocol where T: UITableViewCell {
     }
     
     public func getHeight() -> CGFloat {
-        return height
+        return rowHeight
     }
     
     public func setupLeadingEdit(index: IndexPath) -> UISwipeActionsConfiguration? {
-        leadingEdit?()
+        leadingEdit?(index)
     }
     
     public func setupTrailingEdit(index: IndexPath) -> UISwipeActionsConfiguration? {
-        trailingEdit?()
+        trailingEdit?(index)
     }
+    
 }

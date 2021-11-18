@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SpacingCell: BaseGenericCell {
+open class STSpacingCell: BaseGenericCell {
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         textLabel?.text = ""
         selectionStyle = .none
@@ -18,7 +18,7 @@ class SpacingCell: BaseGenericCell {
         contentView.backgroundColor = .clear
     }
     
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
         textLabel?.text = ""
         backgroundColor = .clear

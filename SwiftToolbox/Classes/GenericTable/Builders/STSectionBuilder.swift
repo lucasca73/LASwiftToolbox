@@ -1,11 +1,11 @@
 import UIKit
 
-public class SectionBuilder {
+public class STSectionBuilder {
     
     public var height: CGFloat = 0
     public var title: String?
-    public var viewBuilder: SectionViewBuilder?
-    public var builders = [BuilderProtocol]()
+    public var viewBuilder: STSectionViewBuilder?
+    public var builders = [STBuilderProtocol]()
     public var sectionId: String?
     
     public func isTable() -> Bool {
@@ -23,7 +23,7 @@ public class SectionBuilder {
         return false
     }
     
-    public func getTable() -> BuilderProtocol? {
+    public func getTable() -> STBuilderProtocol? {
         if isTable() {
             return builders[0]
         }

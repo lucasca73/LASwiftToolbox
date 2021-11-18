@@ -1,5 +1,5 @@
 //
-//  BaseGenericCell.swift
+//  SpacingCell.swift
 //  facturation
 //
 //  Created by Lucas Araujo on 16/06/21.
@@ -8,28 +8,25 @@
 
 import UIKit
 
-open class BaseGenericCell: UITableViewCell, CustomDidSelectRowAt {
-
-    open var didClick: ((IndexPath) -> Void)?
+open class STSpacingCell: STBaseGenericCell {
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureLayout()
+        textLabel?.text = ""
         selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+    }
+    
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        textLabel?.text = ""
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
     
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open override func prepareForReuse() {
-        super.prepareForReuse()
-        didClick = nil
-    }
-    
-    open func configureLayout() { }
-    
-    open func didSelectRowAt(indexPath: IndexPath) {
-        didClick?(indexPath)
-    }
 }

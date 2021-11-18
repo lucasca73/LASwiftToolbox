@@ -9,7 +9,7 @@
 import UIKit
 import SwiftToolbox
 
-class ViewController: GenericTableViewController {
+class ViewController: STGenericTableViewController {
 
     lazy var viewModel: ViewModel? = {
         let viewModel = ViewModel()
@@ -35,7 +35,7 @@ class ViewController: GenericTableViewController {
     
     func buildOptionalCell() {
         
-        add(cell: BaseGenericCell.self) { cell in
+        add(cell: STBaseGenericCell.self) { cell in
             let isOn = self.viewModel?.isTurnedOn ?? false
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.numberOfLines = 0
@@ -51,7 +51,7 @@ class ViewController: GenericTableViewController {
         }
         
         if viewModel?.isTurnedOn == true {
-            add(cell: BaseGenericCell.self) { cell in
+            add(cell: STBaseGenericCell.self) { cell in
                 cell.textLabel?.text = "This cell is optional :), if the condition does not succeed, you can build again and this will not be on the table anymore."
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.textAlignment = .center
@@ -62,7 +62,7 @@ class ViewController: GenericTableViewController {
     func buildTableExample() {
         
         if viewModel?.messages.isEmpty == true {
-            add(cell: BaseGenericCell.self) { cell in
+            add(cell: STBaseGenericCell.self) { cell in
                 cell.textLabel?.text = "Loading fake messages... :)"
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.textAlignment = .center

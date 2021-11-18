@@ -1,19 +1,19 @@
 import UIKit
 
-public protocol CustomDidSelectRowAt {
+public protocol STCustomDidSelectRowAt {
     func didSelectRowAt(indexPath: IndexPath)
 }
 
-public typealias SectionViewBuilder = (_ section: Int) -> UIView?
+public typealias STSectionViewBuilder = (_ section: Int) -> UIView?
 
-open class GenericTableViewController: UIViewController {
+open class STGenericTableViewController: UIViewController {
     
     public var reloadAnimation: UITableView.RowAnimation { .none }
     
     open var tableView = UITableView()
-    open var sections = [SectionBuilder]()
+    open var sections = [STSectionBuilder]()
     open var willAppearEvent: (() -> Void)?
-    open var didAppearSetup: ( (GenericTableViewController) -> Void )?
+    open var didAppearSetup: ( (STGenericTableViewController) -> Void )?
     
     open func buildOnWillAppear() -> Bool {
         return true
@@ -162,8 +162,8 @@ open class GenericTableViewController: UIViewController {
     open func addSection( title: String? = nil,
                      height: CGFloat = 0,
                      reloadListener: String? = nil,
-                     _ builder: SectionViewBuilder? = nil ) {
-        let sec = SectionBuilder()
+                     _ builder: STSectionViewBuilder? = nil ) {
+        let sec = STSectionBuilder()
         sec.viewBuilder = builder
         sec.height = height
         sec.title = title
@@ -175,10 +175,10 @@ open class GenericTableViewController: UIViewController {
     @discardableResult open func add<T: UITableViewCell>(cell: T.Type,
                                                            height: CGFloat = UITableViewAutomaticDimension,
                                                            reloadListener: String? = nil,
-                                                           builder: ((T) -> Void)? = nil ) -> CellBuilder<T> {
+                                                           builder: ((T) -> Void)? = nil ) -> STCellBuilder<T> {
         
         tableView.register(cellType: cell)
-        let cellBuilder = CellBuilder(type: cell, builder: builder, cellId: reloadListener)
+        let cellBuilder = STCellBuilder(type: cell, builder: builder, cellId: reloadListener)
         cellBuilder.type = cell
         cellBuilder.height = height
         
@@ -200,10 +200,10 @@ open class GenericTableViewController: UIViewController {
                                                                 count: Int,
                                                                 rowHeight: CGFloat = UITableViewAutomaticDimension,
                                                                 reloadListener: String? = nil,
-                                                                builder: ((IndexPath, T) -> Void)? = nil ) -> TableBuilder<T> {
+                                                                builder: ((IndexPath, T) -> Void)? = nil ) -> STTableBuilder<T> {
         
         tableView.register(cellType: cell)
-        let tb = TableBuilder(type: cell, builder: builder, cellId: reloadListener)
+        let tb = STTableBuilder(type: cell, builder: builder, cellId: reloadListener)
         tb.type = cell
         tb.rows = count
         tb.rowHeight = rowHeight
@@ -226,10 +226,10 @@ open class GenericTableViewController: UIViewController {
     @discardableResult open func addTable<T: UITableViewCell>(cell: T.Type,
                                                          counter: @escaping (() -> Int),
                                                          reloadListener: String? = nil,
-                                                         builder: ((IndexPath, T) -> Void)? = nil ) -> TableBuilder<T> {
+                                                         builder: ((IndexPath, T) -> Void)? = nil ) -> STTableBuilder<T> {
         
         tableView.register(cellType: cell)
-        let tb = TableBuilder(type: cell, builder: builder, cellId: reloadListener)
+        let tb = STTableBuilder(type: cell, builder: builder, cellId: reloadListener)
         tb.type = cell
         tb.rows = counter()
         tb.counter = counter
@@ -301,7 +301,7 @@ open class GenericTableViewController: UIViewController {
         }
     }
     
-    open func builder(for indexPath: IndexPath) -> BuilderProtocol? {
+    open func builder(for indexPath: IndexPath) -> STBuilderProtocol? {
         let section = sections[indexPath.section]
         
         if let tableBuilder = section.getTable() {
@@ -313,7 +313,7 @@ open class GenericTableViewController: UIViewController {
     }
 }
 
-extension GenericTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension STGenericTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -327,7 +327,7 @@ extension GenericTableViewController: UITableViewDelegate, UITableViewDataSource
         
         if indexPath.section < sections.count {
             let section = sections[indexPath.section]
-            var builder: BuilderProtocol?
+            var builder: STBuilderProtocol?
             
             builder = section.getTable()
             
@@ -387,7 +387,7 @@ extension GenericTableViewController: UITableViewDelegate, UITableViewDataSource
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let clicableCell = tableView.cellForRow(at: indexPath) as? CustomDidSelectRowAt {
+        if let clicableCell = tableView.cellForRow(at: indexPath) as? STCustomDidSelectRowAt {
             clicableCell.didSelectRowAt(indexPath: indexPath)
         }
     }

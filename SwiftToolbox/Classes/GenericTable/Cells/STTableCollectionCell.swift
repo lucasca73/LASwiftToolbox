@@ -8,19 +8,19 @@
 
 import UIKit
 
-class CollectionBuilder<Cell: UICollectionViewCell> {
+class STCollectionBuilder<Cell: UICollectionViewCell> {
     var counter: (() -> Int)?
     var builder: ((IndexPath, Cell) -> Void)?
     var didClick: ((IndexPath) -> Void)?
-    var setupCollection: ((GenericCollectionView<Cell>?) -> Void)?
+    var setupCollection: ((STGenericCollectionView<Cell>?) -> Void)?
 }
 
-class TableCollectionCell<Cell: UICollectionViewCell>: UITableViewCell {
+class STTableCollectionCell<Cell: UICollectionViewCell>: UITableViewCell {
     
-    var builder: CollectionBuilder<Cell>?
+    var builder: STCollectionBuilder<Cell>?
     
-    lazy var collection: GenericCollectionView<Cell> = {
-        let controller = GenericCollectionView<Cell>()
+    lazy var collection: STGenericCollectionView<Cell> = {
+        let controller = STGenericCollectionView<Cell>()
         return controller
     }()
     

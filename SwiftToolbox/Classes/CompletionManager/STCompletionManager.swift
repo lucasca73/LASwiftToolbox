@@ -1,10 +1,10 @@
 import Foundation
 
-open class CompletionObject: NSObject {
+open class STCompletionObject: NSObject {
     
     open var name: String = ""
     open var closureID: Int?
-    open var manager: CompletionManager?
+    open var manager: STCompletionManager?
     open var finished = false
     open var endCompletion: (() -> Void)?
     
@@ -12,7 +12,7 @@ open class CompletionObject: NSObject {
         self.name = name
     }
     
-    convenience init(manager: CompletionManager) {
+    convenience init(manager: STCompletionManager) {
         self.init(name: "")
         self.manager = manager
         manager.addCompletion(self)
@@ -28,7 +28,7 @@ open class CompletionObject: NSObject {
         finished = true
     }
     
-    open func setManager(_ manager: CompletionManager) {
+    open func setManager(_ manager: STCompletionManager) {
         manager.addCompletion(self)
     }
     
@@ -37,11 +37,11 @@ open class CompletionObject: NSObject {
     }
 }
 
-open class CompletionManager {
+open class STCompletionManager {
     
     private static let threadCompletionHandler = DispatchQueue(label: "com.completion.manager", attributes: .concurrent)
 
-    open var completions = [CompletionObject]()
+    open var completions = [STCompletionObject]()
     private var _endCompletion: (() -> Void)?
     
     private var counter = 0
@@ -51,8 +51,8 @@ open class CompletionManager {
     
     public init() {}
     
-    open func newCompletion() -> CompletionObject {
-        let obj = CompletionObject(name: "")
+    open func newCompletion() -> STCompletionObject {
+        let obj = STCompletionObject(name: "")
         addCompletion(obj)
         return obj
     }
@@ -67,13 +67,13 @@ open class CompletionManager {
         }
     }
     
-    open func addCompletion(_ closure: CompletionObject) {
+    open func addCompletion(_ closure: STCompletionObject) {
         
         if closure.finished {
             return
         }
         
-        CompletionManager.threadCompletionHandler.async(flags: .barrier) {
+        STCompletionManager.threadCompletionHandler.async(flags: .barrier) {
             self.counter += 1
             
             closure.manager = self
@@ -91,9 +91,9 @@ open class CompletionManager {
         })
     }
     
-    func updatePartialProgress(closure: CompletionObject) {
+    func updatePartialProgress(closure: STCompletionObject) {
         
-        CompletionManager.threadCompletionHandler.async(flags: .barrier) {
+        STCompletionManager.threadCompletionHandler.async(flags: .barrier) {
             var removeIndex = 0
             self.completed += 1
             

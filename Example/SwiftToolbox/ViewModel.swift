@@ -19,7 +19,7 @@ class ViewModel {
     func loadInfo() {
         
         // Example to use completion manager
-        let manager = CompletionManager()
+        let manager = STCompletionManager()
         
         let simpleTask = manager.newCompletion()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

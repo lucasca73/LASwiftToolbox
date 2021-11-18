@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericCollectionView<Cell: UICollectionViewCell>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class STGenericCollectionView<Cell: UICollectionViewCell>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     var builder: ((_ indexPath: IndexPath, _ cell: Cell) -> Void)?
     var counter: (() -> Int)?
