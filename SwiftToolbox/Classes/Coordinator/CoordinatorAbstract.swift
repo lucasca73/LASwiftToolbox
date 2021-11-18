@@ -137,7 +137,7 @@ public class CoordinatorAbstract: NSObject {
 }
 
 extension CoordinatorAbstract: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    private func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
         if root === viewController {
             parent?.didEnd(from: self)
