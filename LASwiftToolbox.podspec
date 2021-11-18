@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LASwiftToolbox'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'LASwiftToolbox is a compile of helpers, classes and extensions, to improve code reuse and enhance productivity.'
 
 # This description is used to generate tags and improve search results.
