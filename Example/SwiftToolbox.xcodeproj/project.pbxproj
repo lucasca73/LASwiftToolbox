@@ -347,11 +347,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftToolbox_Example/Pods-SwiftToolbox_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftToolbox/SwiftToolbox.framework",
+				"${BUILT_PRODUCTS_DIR}/LASwiftToolbox/LASwiftToolbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftToolbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LASwiftToolbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SwiftToolboxVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftToolboxVersionString[];
+FOUNDATION_EXPORT double LASwiftToolboxVersionNumber;
+FOUNDATION_EXPORT const unsigned char LASwiftToolboxVersionString[];
 

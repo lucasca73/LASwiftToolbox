@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftToolbox
+import LASwiftToolbox
 
 class ViewModel {
     weak var controller: ViewController?

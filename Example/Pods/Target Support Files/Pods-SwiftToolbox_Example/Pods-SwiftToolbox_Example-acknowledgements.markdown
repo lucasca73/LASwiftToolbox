@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## SwiftToolbox
+## LASwiftToolbox
 
 Copyright (c) 2021 Lucas Costa Araujo <lucas@guarana.io>
 

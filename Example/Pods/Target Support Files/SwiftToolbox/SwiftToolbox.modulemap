@@ -1,6 +1,0 @@
-framework module SwiftToolbox {
-  umbrella header "SwiftToolbox-umbrella.h"
-
-  export *
-  module * { export * }
-}

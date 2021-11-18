@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftToolbox
+import LASwiftToolbox
 
 class ViewController: STGenericTableViewController {
 

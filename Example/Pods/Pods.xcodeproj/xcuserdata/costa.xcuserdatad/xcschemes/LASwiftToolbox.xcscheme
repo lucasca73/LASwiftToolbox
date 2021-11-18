@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F6EC65CEE9F2B39709E623BB9ED0D38"
-               BuildableName = "SwiftToolbox.framework"
-               BlueprintName = "SwiftToolbox"
+               BlueprintIdentifier = "9FA9180D259045C56D882884C4EB88D3"
+               BuildableName = "LASwiftToolbox.framework"
+               BlueprintName = "LASwiftToolbox"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

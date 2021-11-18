@@ -1,0 +1,6 @@
+framework module LASwiftToolbox {
+  umbrella header "LASwiftToolbox-umbrella.h"
+
+  export *
+  module * { export * }
+}
